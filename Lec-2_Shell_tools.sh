@@ -55,4 +55,8 @@ find . -name "*.html" -print0 | xargs -0 tar -cvf b.tar.gz
 # Now we can make sure that "1 2.html" can be supported, because xargs knows it’s NULL to divide files rather than spaces!
 
 
-
+5. Here are some ways for the question.
+# https://unix.stackexchange.com/questions/240418/find-latest-files
+# But i'd prefer to use ZSH, simple and elegant. The (1,3) means get the first three files.
+print -lr -- **/*(oa[1,3])
+# Use your own directory to replace **/*, so you won't print the last accessed files in your whole computer!
